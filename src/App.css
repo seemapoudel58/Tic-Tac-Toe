@@ -4,7 +4,9 @@
   align-items: center;
 }
 .board-container{
-  margin:10rem;
+  margin: 0 10rem 10rem 10rem;
+  width:500px;
+  margin:0 auto;
 }
 h4{
   font-size: 1.5rem;

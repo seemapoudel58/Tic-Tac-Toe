@@ -8,7 +8,7 @@ const Square = (props)=>{
         style={{
             border:"2px solid", 
             height:"100px", 
-            width:"100%",
+            width:"40%",
             display:'flex',
             alignItems:"center",
             justifyContent:'center',
