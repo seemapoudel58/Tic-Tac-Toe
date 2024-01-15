@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Square from "./square";
 
+
 const Board = () => {
     const [state , setState]= useState(Array(9).fill(null)); 
     const [isOTurn, setIsOTurn]=useState(true);
+
 
 
     const checkWinner = ()=>{
@@ -45,6 +47,8 @@ const Board = () => {
         setIsOTurn(!isOTurn);
 
     } 
+
+    
 
     return(
         <div className="board-container">

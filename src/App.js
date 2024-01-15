@@ -1,7 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Board from './components/board';
 import Header from './components/Header';
+import Reset from './components/reset';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         <div className='App'>
             <Header />
             <Board />
+            <Reset />
         </div>
     )
   
