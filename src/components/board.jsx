@@ -2,7 +2,7 @@ import React, { useState ,useEffect} from "react";
 import Square from "./square";
 
 
-const Board = ({ resetFlag }) => {
+const Board = ({ resetFlag,  setResetFlag }) => {
     const initialSquares = Array(9).fill(null);
     const [state, setState] = useState(initialSquares);
     const [isOTurn, setIsOTurn]=useState(true);
@@ -37,26 +37,31 @@ const Board = ({ resetFlag }) => {
     
     const isWinner= checkWinner();
 
-    const handleClick = (index)=>{
-         
-        // Check if the square is already filled or there's a winner
-        if (state[index] !== null || isWinner) {
-            return;
-        }
-        const copyState = [...state];
-        copyState[index]= isOTurn ? 'O': 'X';
-        setState(copyState);
-        setIsOTurn(!isOTurn);
-
-    } 
-
     useEffect(() => {
-        if (resetFlag && !state.every((square) => square === null)) {
-            // Reset the game when resetFlag changes
-            setState(initialSquares);
-            setIsOTurn(true);
+        if (resetFlag ) {
+          // Reset the game when resetFlag changes
+          setState(initialSquares);
+          setIsOTurn(true);
+          setResetFlag(false);
         }
-    }, [resetFlag , state, initialSquares]);
+      }, [resetFlag]); // Removed 'state' from dependencies
+      
+    
+      
+    const handleClick = (index) => {
+        if (!resetFlag) { // Only allow clicks if resetFlag is false
+          if (state[index] !== null || isWinner) {
+            return;
+          }
+      
+          const copyState = [...state];
+          copyState[index] = isOTurn ? 'O' : 'X';
+          setState(copyState);
+          setIsOTurn(!isOTurn);
+        }
+    };
+    
+
 
     
 

@@ -16,7 +16,7 @@ function App() {
     return(
         <div className='App'>
             <Header />
-            <Board resetFlag={resetFlag}/>
+            <Board resetFlag={resetFlag} setResetFlag={setResetFlag}/>
             <Reset title="Reset" onClick={handleResetClick}/>
         </div>
     )
