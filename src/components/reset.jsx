@@ -1,10 +1,9 @@
 import React from "react";
 
-const Reset=()=>{
+
+const Reset=({title, onClick})=>{
     return(
-        <button className="resetButton">
-            Reset
-        </button>
+        <button onClick={onClick}>{title}</button>
     )
 }
 export default Reset;

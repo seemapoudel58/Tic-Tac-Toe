@@ -12,7 +12,7 @@ h4{
   font-size: 1.5rem;
 }
 
-.resetButton {
+Button {
   padding: 10px;
   font-size: 18px;
   border: none;
@@ -24,7 +24,7 @@ h4{
   justify-content: center;
 }
 
-.resetButton:hover {
+Button:hover {
   background-color: #abcead;
 }
 
